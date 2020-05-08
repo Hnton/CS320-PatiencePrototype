@@ -1,0 +1,44 @@
+
+public class consoleOutput implements IOutput{
+
+	public void printDeck(Pile d) {
+		
+		System.out.println("\nDECK\n");
+		d.pokerCards.get(0).setVisibility(true);
+	
+		for(int i = 0; i < 3; i++)
+		{
+			System.out.print(d.pokerCards.get(i).toString());
+		}
+	}
+	
+	public void printColumns(Pile c) {
+		System.out.println("\nCOLUMN\n");
+		c.pokerCards.get(0).setVisibility(true);
+
+		for(int i = 0; i < c.size(); i++)
+		{
+			System.out.print(c.pokerCards.get(i).toString());
+		}
+	}
+	
+	public void printFoundations(Pile f) {
+		System.out.println("\nFOUNDATION\n");
+		f.pokerCards.get(0).setVisibility(true);
+
+//		for(int i = 1; i < f.size(); i++)
+//		{
+//			f.pokerCards.get(i).setVisibility(false);
+//		}
+//		
+		for(int i = 0; i < f.size(); i++)
+		{
+			for(int j = 1; j < f.size(); j++)
+			{
+				
+			}
+			System.out.print(f.pokerCards.get(i).toString());
+		}
+	}
+		
+}

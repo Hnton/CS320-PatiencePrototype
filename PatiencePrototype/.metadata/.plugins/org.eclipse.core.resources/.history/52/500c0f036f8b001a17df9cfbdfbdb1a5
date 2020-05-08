@@ -1,0 +1,19 @@
+
+
+public class Foundation extends Pile{
+
+	@Override
+	public boolean isFull() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean rules(PokerCard p) {
+
+//		if(this.size() == 0) && (p.value.ordinal())
+		
+		return false;
+	}
+
+}

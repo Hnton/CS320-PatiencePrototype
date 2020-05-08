@@ -1,0 +1,23 @@
+public class Column extends Pile {
+
+	/**
+	 * NOT IMPLEMENTED
+	 */
+	@Override
+	public boolean isFull() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean rules(PokerCard c) {
+		
+		if(pokerCard.size() == 0 || (this.peek().getValue().ordinal() - 1 == card.getValue().ordinal() && this.peek().getColor() != card.getColor()))
+		{
+			return true;
+		}
+	return false;
+	}
+
+	
+}

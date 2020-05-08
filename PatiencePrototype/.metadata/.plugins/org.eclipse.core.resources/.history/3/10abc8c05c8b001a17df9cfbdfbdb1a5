@@ -1,0 +1,17 @@
+
+
+public interface ICard {
+
+	public boolean getVisible();
+	
+	public Enum<Value> getValue();
+	
+	public Enum<Suit> getSuit();
+	
+	public Enum<Color> getColor();
+	
+	public void setVisibility(boolean visibility);
+	
+	public boolean isVisibility();
+	
+}

@@ -1,0 +1,70 @@
+
+
+public class PokerCard extends Card {
+
+	private boolean visibility;
+	private Enum<Value> value;
+	private Enum<Suit> suit;
+	private Enum<Color> color;
+	
+	/**
+	 * Constructor that takes in the parameters Value and Suit
+	 */
+	public PokerCard()
+	{
+		visibility = false;
+		value = Value.Ace;
+		suit = Suit.Hearts;
+		color = Color.Red;
+	}
+	
+	public PokerCard(Value v, Suit s)
+	{
+		value = v;
+		suit = s;
+	}
+	
+	public Enum<Value> getValue() {
+		return value;
+	}
+
+	public Enum<Suit> getSuit() {
+		return suit;
+	}
+
+	public Enum<Color> getColor() {
+		
+		if(suit == Suit.Spades || suit == Suit.Clubs)
+		{
+			color = Color.Black;
+		}
+		else
+		{
+			color = Color.Red;
+		}
+	return color;
+	}
+	
+	
+	public boolean getVisibility() {
+		return visibility;
+	}
+
+	public void setVisibility(boolean v) {
+		visibility = v;
+	}
+	
+	public String toString() {
+		
+		if (visibility == true)
+		{
+			return value + " of " + suit + "\n";
+		}
+		else
+		{
+			return "Bicycle\n";
+		}
+	}
+
+
+}

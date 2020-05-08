@@ -1,0 +1,31 @@
+
+
+public class Player {
+
+	public String name;
+	public int gamesWon;
+	
+	
+	public Player(String n, int g) {
+		name = n;
+		gamesWon = g;
+	}
+	
+	public String getName() {
+		
+		return name;
+	}
+	
+	public void setName(String n) {
+		name = n;
+	}
+	
+	public int getGamesWon() {
+		return gamesWon;
+	}
+	
+	public void getGamesWon(int g) {
+		gamesWon = g;
+	}
+	
+}

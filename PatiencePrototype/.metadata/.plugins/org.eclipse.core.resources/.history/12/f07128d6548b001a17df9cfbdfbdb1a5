@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+import java.util.Collection;
+
+public interface IPile {
+
+	public boolean add();
+	
+	public boolean removeCard();
+	
+	@SuppressWarnings("rawtypes")
+	public Collection<ArrayList> removeAll();
+	
+	@SuppressWarnings("rawtypes")
+	public Collection<ArrayList> addAll();
+		
+	public boolean moveCard(Pile p);
+	
+}

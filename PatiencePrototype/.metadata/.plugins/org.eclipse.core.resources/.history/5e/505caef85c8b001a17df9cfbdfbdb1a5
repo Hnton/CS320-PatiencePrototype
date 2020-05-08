@@ -1,0 +1,20 @@
+
+
+public abstract class Card implements ICard{
+	
+	protected boolean Visibility;
+	protected Enum<Value> value;
+	protected Enum<Suit> suit;
+	protected Enum<Color> color;
+	
+	public Enum<Value> getValue();
+
+	public Enum<Suit> getSuit();
+
+	public Enum<Color> getColor();
+	
+	public boolean isVisibility();
+
+	public void setVisibility(boolean visibility);
+
+}

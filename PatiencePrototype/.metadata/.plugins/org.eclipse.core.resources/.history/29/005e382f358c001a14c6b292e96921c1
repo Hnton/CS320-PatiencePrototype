@@ -1,0 +1,19 @@
+
+/**
+ * Abstract Card Class that implements ICard
+ * @author Mikae
+ *
+ */
+public abstract class Card implements ICard{
+	
+	public abstract Enum<Value> getValue();
+
+	public abstract Enum<Suit> getSuit();
+
+	public abstract Enum<Color> getColor();
+	
+	public abstract boolean getVisibility();
+
+	public abstract void setVisibility(boolean v);
+
+}

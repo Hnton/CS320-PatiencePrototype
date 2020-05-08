@@ -1,0 +1,22 @@
+
+
+public class Testing {
+
+	public static void main(String[] args) {
+
+		Deck test = new Deck();
+		
+		System.out.println(test.size());
+		
+		
+		
+		test.shuffle();
+		
+		System.out.println(test.toString());
+		
+		test.removeCard();
+		System.out.println(test.toString());
+
+	}
+
+}

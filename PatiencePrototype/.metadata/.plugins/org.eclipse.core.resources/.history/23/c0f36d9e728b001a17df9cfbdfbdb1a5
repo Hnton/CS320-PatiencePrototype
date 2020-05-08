@@ -1,0 +1,43 @@
+
+public class Testing {
+
+	public static void main(String[] args) {
+
+		
+		PokerCard Ace = new PokerCard(Value.Ace, Suit.Diamonds);
+		PokerCard Two = new PokerCard(Value.Two, Suit.Diamonds);
+		PokerCard Three = new PokerCard(Value.Three, Suit.Diamonds);
+
+		Deck deck = new Deck();
+		deck.shuffle();
+		Column c1 = new Column();
+		Foundation f1 = new Foundation();
+		consoleOutput output = new consoleOutput();
+		
+		f1.add(Ace);
+		f1.add(Two);
+		output.printDeck(deck);
+		
+		for(int i = 0; i < 6; i++)
+		{
+			deck.moveCard(c1);
+		}
+		deck.add(Three);
+		output.printColumns(c1);
+		
+
+
+		output.printFoundations(f1);
+		
+		if(f1.rules(deck.pokerCards.get(0)) == true)
+		{
+			deck.moveCard(f1);
+			output.printFoundations(f1);
+
+		}
+		else
+		{
+			System.out.print("NO GO");
+		}
+	}
+}

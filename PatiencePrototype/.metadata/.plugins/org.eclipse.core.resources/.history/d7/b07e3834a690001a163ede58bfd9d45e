@@ -1,0 +1,29 @@
+/**
+ * Column Class that implements the rules for the cards being moved to that column
+ * @author Mikae
+ *
+ */
+public class Column extends Pile {
+
+	/**
+	 * NOT IMPLEMENTED
+	 */
+	@Override
+	public boolean isFull() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	/**
+	 * Rule that if true then the card can enter the column, if not then it can not be moved to the column
+	 */
+	@Override
+	public boolean rules(Card card) {
+		 
+		if((pokerCards.size() == 0 && card.getValue() == Value.King) || (pokerCards.get(0).getValue().ordinal() - 1 == card.getValue().ordinal() && pokerCards.get(0).getColor() != card.getColor()))
+		{
+			return true;
+		}
+	return false;
+	}
+}

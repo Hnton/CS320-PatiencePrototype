@@ -1,0 +1,30 @@
+
+
+public class Testing {
+
+	public static void main(String[] args) {
+
+		Deck test = new Deck();
+		Column test1 = new Column();
+		Foundation test2 = new Foundation();
+		
+		test.moveCard(test1);
+		
+		System.out.println("Deck" + test.toString());
+		System.out.println(test.size());
+		
+		System.out.println("Column" + test1.toString());
+		System.out.println(test1.size());
+		
+		test.moveCard(test2);
+		System.out.println("Foundation" + test2.toString());
+		System.out.println(test2.size());
+		
+		
+
+		
+		
+		
+	}
+
+}

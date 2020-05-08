@@ -1,0 +1,12 @@
+
+public class consoleOutput implements IOutput{
+
+	System.out.println("DECK\n");
+	deck.pokerCards.get(0).setVisibility(true);
+
+	for(int i = 0; i < 3; i++)
+	{
+		System.out.print(deck.pokerCards.get(i).toString());
+	}
+	
+}

@@ -1,0 +1,21 @@
+
+
+public class PokerCard extends Card {
+
+	public PokerCard()
+	{
+		value = Value.Ace;
+		suit = Suit.Hearts;
+		color = Color.Red;
+	}
+	
+	public PokerCard(Value v, Suit s)
+	{
+		value = v;
+		suit = s;
+	}
+	
+	public String toString() {
+		return value + " of " + suit + "\n";
+	}
+}

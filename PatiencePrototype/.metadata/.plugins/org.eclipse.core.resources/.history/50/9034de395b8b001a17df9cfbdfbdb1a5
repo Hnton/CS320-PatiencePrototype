@@ -1,0 +1,24 @@
+
+
+public class Testing {
+
+	public static void main(String[] args) {
+
+		Deck test = new Deck();
+		Pile test1 = new Pile();
+
+		test.moveCard(test1);
+		
+		System.out.println("Deck 1" + test.toString());
+		System.out.println(test.size());
+		
+		System.out.println("Deck 2" + test1.toString());
+		System.out.println(test1.size());
+		
+
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,39 @@
+
+
+public class Testing {
+
+	public static void main(String[] args) {
+
+		Deck deck = new Deck();
+		test.shuffle();
+		Column c1 = new Column();
+		Foundation f1 = new Foundation();
+		
+		
+		
+		test.pokerCards.get(0).setVisibility(true);
+		System.out.println("Deck\n" + test.toString());
+		System.out.println("Deck Size" + test.size());
+		
+		test.moveCard(test1);
+
+		test.moveCard(test1);
+		test1.pokerCards.get(0).setVisibility(true);
+		System.out.println("Column\n" + test1.toString());
+		System.out.println(test1.size());
+		
+		System.out.println("Deck Size" + test.size());
+
+
+		test.moveCard(test2);
+		test.moveCard(test2);
+		test2.pokerCards.get(0).setVisibility(true);
+		System.out.println("Foundation\n" + test2.toString());
+		System.out.println(test2.size());
+	
+		
+		
+		
+	}
+
+}

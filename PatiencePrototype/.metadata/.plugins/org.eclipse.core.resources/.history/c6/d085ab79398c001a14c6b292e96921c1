@@ -1,0 +1,21 @@
+public class Player {
+
+	/**
+	 * Player name
+	 */
+	private String name;
+	
+	
+	public Player(String n) {
+		name = n;
+	}
+	
+	public String getName() {
+		
+		return name;
+	}
+	
+	public void setName(String n) {
+		name = n;
+	}
+}

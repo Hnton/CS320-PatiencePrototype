@@ -1,0 +1,37 @@
+
+public class Testing {
+
+	public static void main(String[] args) {
+
+		Deck deck = new Deck();
+		deck.shuffle();
+		Column c1 = new Column();
+		Foundation f1 = new Foundation();
+		consoleOutput output = new consoleOutput();
+		
+		System.out.println(deck.pokerCards.get(0).setVisibility(1));
+		System.out.println(deck.pokerCards.get(0).value.ordinal());
+		
+		
+//		for(int i = 0; i < 7; i++) {
+//			deck.moveCard(c1);
+//		}
+//		
+//		output.printColumns(c1);
+//		output.printDeck(deck);
+//		
+//		deck.moveCard(c1);
+//
+//		
+//		output.printColumns(c1);
+//		output.printDeck(deck);
+//		
+//		c1.moveCard(f1);
+//		c1.moveCard(f1);
+//		c1.moveCard(f1);
+//		System.out.println("LAST");
+//		output.printColumns(c1);
+//		output.printDeck(deck);
+//		output.printFoundations(f1);
+	}
+}

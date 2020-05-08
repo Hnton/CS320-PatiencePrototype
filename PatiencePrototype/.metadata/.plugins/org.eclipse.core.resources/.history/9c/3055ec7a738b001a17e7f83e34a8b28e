@@ -1,0 +1,19 @@
+public class Column extends Pile {
+
+	/**
+	 * NOT IMPLEMENTED
+	 */
+	@Override
+	public boolean isFull() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean rules(PokerCard c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
+}

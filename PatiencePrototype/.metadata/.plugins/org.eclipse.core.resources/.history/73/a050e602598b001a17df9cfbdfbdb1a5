@@ -1,0 +1,115 @@
+import java.util.ArrayList;
+import java.util.Collection;
+
+public abstract class Pile implements IPile {
+
+	public ArrayList<PokerCard> pokerCards = new ArrayList<PokerCard>();
+
+	/**
+	 * Adds PokerCard to the arraylist
+	 * Returns true if added
+	 * Returns false if not added
+	 */
+	public boolean add(PokerCard p) {
+
+		pokerCards.add(p);
+		
+		if(pokerCards.contains(p))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	/**
+	 * Removes the top PokerCard on the Arraylist
+	 * Returns true if success
+	 * Returns false if not successful
+	 */
+	public boolean removeCard() {
+		
+		int beforeSize;
+		int afterSize;
+		
+		beforeSize = pokerCards.size();
+		pokerCards.remove(0);
+		afterSize = pokerCards.size();
+		
+		if(beforeSize - 1 == afterSize)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	/**
+	 * Removes all cards from ArrayList
+	 * Returns true if size is 0
+	 * Returns false if size is not 0
+	 */
+	public boolean removeAll() {
+
+		pokerCards.removeAll(pokerCards);
+		
+		if (pokerCards.size() == 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	/**
+	 * AddAll from one collection to another collection
+	 * Returns true if collection thats being added size is 0
+	 * Returns false if size is not 0
+	 */
+	public boolean addAll(Collection<PokerCard> p) {
+		
+		pokerCards.addAll(p);
+		
+		if(p.size() == 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	public boolean moveCard(Pile p) {
+
+		PokerCard move = new PokerCard();
+		
+		
+
+		
+		move = pokerCards.get(0);
+		
+		return false;
+	}
+	
+	/**
+	 * Returns the size of the arraylist
+	 */
+	public int size() {
+		
+		return pokerCards.size();
+	}
+
+	/**
+	 * ToString to print out the list of the cards in a arraylist
+	 */
+	public String toString() {
+		return pokerCards.toString() + "\n";
+	}
+}

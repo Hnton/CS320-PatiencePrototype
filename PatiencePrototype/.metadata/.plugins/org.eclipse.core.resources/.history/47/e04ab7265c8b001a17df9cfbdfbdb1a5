@@ -1,0 +1,17 @@
+import java.util.Collection;
+
+public interface IPile {
+
+	public boolean add(PokerCard p);
+	
+	public boolean removeCard();
+	
+	public boolean removeAll();
+		
+	public boolean moveCard(Pile p);
+
+	public boolean addAll(Collection<PokerCard> p);
+	
+	public int size();
+	
+}

@@ -1,0 +1,28 @@
+
+public class Testing {
+
+	public static void main(String[] args) {
+
+		Deck deck = new Deck();
+		deck.shuffle();
+		Column c1 = new Column();
+		Foundation f1 = new Foundation();
+		consoleOutput output = new consoleOutput();
+		
+		output.printFoundations(f1);
+		output.printColumns(c1);
+		output.printDeck(deck);
+		
+		
+		if(f1.rules(deck.pokerCards.get(0)) == true)
+		{
+			deck.moveCard(f1);
+			System.out.print("Moved");
+
+		}
+		else
+		{
+			System.out.print("NO GO");
+		}
+	}
+}

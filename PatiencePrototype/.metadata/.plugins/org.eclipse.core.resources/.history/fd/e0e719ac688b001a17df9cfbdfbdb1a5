@@ -1,0 +1,8 @@
+
+public class consoleOutput implements IOutput{
+
+public void printDeck(Pile d) {
+	
+}
+	
+}

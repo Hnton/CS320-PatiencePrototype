@@ -1,0 +1,23 @@
+
+
+/**
+ * Interface that Pile will implement
+ * @author Mikae
+ *
+ */
+public interface IPile {
+
+	public boolean add(PokerCard p);
+	
+	public boolean removeCard();
+	
+	public boolean removeAll();
+			
+	public boolean moveCard(Pile p);
+	
+	public int size();
+	
+	public abstract boolean isFull();
+	
+	public abstract boolean rules(PokerCard p);
+}

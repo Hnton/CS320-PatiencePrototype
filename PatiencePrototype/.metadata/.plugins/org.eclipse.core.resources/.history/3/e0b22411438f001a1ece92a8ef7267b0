@@ -1,0 +1,44 @@
+
+public class consoleOutput {
+
+	public void printDeck(Pile d) {
+		
+		d.pokerCards.get(0).setVisibility(true);
+	
+		for(int i = 0; i < 3; i++)
+		{
+			System.out.print(d.pokerCards.get(i).toString());
+		}
+	}
+	
+	public void printColumns(Pile c) {
+		c.pokerCards.get(0).setVisibility(true);
+
+		for(int i = 0; i < c.size(); i++)
+		{
+			System.out.print(c.pokerCards.get(i).toString());
+		}
+	}
+	
+	public void printFoundations(Pile f) {
+		
+		if (f.pokerCards.size() == 0)
+		{
+			return;
+		}
+		else
+		{
+			f.pokerCards.get(0).setVisibility(true);
+	
+			for(int i = 0; i < f.size(); i++)
+			{
+				for(int j = 1; j < f.size(); j++)
+				{
+					f.pokerCards.get(j).setVisibility(false);
+				}
+				System.out.print(f.pokerCards.get(i).toString());
+			}
+		}
+	}
+		
+}

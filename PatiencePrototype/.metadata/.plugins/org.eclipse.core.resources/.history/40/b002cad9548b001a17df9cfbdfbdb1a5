@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+import java.util.Collection;
+
+public abstract class Pile implements IPile {
+
+	public ArrayList<PokerCard> pokerCards = new ArrayList<PokerCard>();
+	
+	@Override
+	public boolean add() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean removeCard() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@SuppressWarnings("rawtypes")
+	@Override
+	public Collection<ArrayList> removeAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@SuppressWarnings("rawtypes")
+	@Override
+	public Collection<ArrayList> addAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean moveCard(Pile p) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public String toString() {
+		return pokerCards.toString() + "\n";
+	}
+}

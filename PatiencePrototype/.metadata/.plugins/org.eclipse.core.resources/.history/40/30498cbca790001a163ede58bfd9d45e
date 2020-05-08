@@ -1,0 +1,318 @@
+import java.util.Scanner;
+
+/**
+ * Test class that tests all methods used in PatienceProtoype
+ * @author Mikae
+ *
+ */
+public class Testing {
+
+	public static void main(String[] args) {
+		
+		 
+		try (Scanner sc = new Scanner(System.in)) {
+			System.out.println("Welcome to Patience Test Terminal");
+			
+			
+
+
+			
+			int input = 1;
+			
+
+
+			while( input != 0)
+			{
+				
+				System.out.println("0 - EXIT");
+				System.out.println("1 - PokerCard");
+				System.out.println("2 - Deck");
+				System.out.println("3 - Column");
+				System.out.println("4 - Foundation");
+				System.out.println("5 - Pile");
+				System.out.println("6 - Player");
+				System.out.println("7 - Test ALL");
+
+				
+				System.out.println("\nChoose which class you would like to test (1-6) or 0 to exit\n");
+				
+				input = sc.nextInt();
+
+				
+				switch (input) {
+				case 0 :
+					System.out.println("Bye!");
+					return;
+				case 1 :
+					testingPokerCard(); //DONE
+					break;
+				case 2 :
+					testingDeck(); //DONE
+					break;
+				case 3 :
+					testingColumn(); //DONE
+					break;
+				case 4 :
+					testingFoundation(); //DONE
+					break;
+				case 5 :
+					testingPile(); //DONE
+					break;
+				case 6 :
+					testingPlayer(); //DONE
+					break;
+				case 7 :
+					testingPokerCard();
+					testingDeck();
+					testingColumn();
+					testingFoundation();
+					testingPile();
+					testingPlayer();
+					break;
+				default :
+					System.out.println("Please enter valid # (0 - 6)");
+					
+				}
+				
+			}
+		}
+		
+
+
+		
+	}
+	
+	public static void testingPokerCard() {
+		
+		System.out.println("TESTING POKERCARD\n\n");
+		
+		System.out.println("Default Constructor\n");
+		PokerCard defaultC = new PokerCard();
+		System.out.println("\tExpected: Ace of Hearts");
+		defaultC.setVisibility(true);
+		System.out.println("\tActual:   " + defaultC);
+		
+		System.out.println("Overloaded Constructor\n");
+		PokerCard overloadedC = new PokerCard(Value.Queen, Suit.Clubs);
+		System.out.println("\tExpected: Queen of Clubs");
+		overloadedC.setVisibility(true);
+		System.out.println("\tActual:   " + overloadedC);
+		
+		System.out.println("getValue()\n");
+		PokerCard getV = new PokerCard(Value.Queen, Suit.Clubs);
+		System.out.println("\tExpected: Queen");
+		getV.setVisibility(true);
+		System.out.println("\tActual:   " + getV.getValue());
+	
+		System.out.println("getSuit()\n");
+		PokerCard getSuit = new PokerCard(Value.Queen, Suit.Clubs);
+		System.out.println("\tExpected: Clubs");
+		getSuit.setVisibility(true);
+		System.out.println("\tActual:   " + getSuit.getSuit());
+		
+		System.out.println("getColor()\n");
+		PokerCard getColor = new PokerCard(Value.Queen, Suit.Clubs);
+		System.out.println("\tExpected: Black");
+		getColor.setVisibility(true);
+		System.out.println("\tActual:   " + getColor.getColor());
+		
+		System.out.println("setVisibility() & getVisibility()\n");
+		PokerCard setVis = new PokerCard(Value.Queen, Suit.Clubs);
+		System.out.println("\tExpected: true");
+		setVis.setVisibility(true);
+		System.out.println("\tActual:   " + setVis.getVisibility());
+	}
+	
+	public static void testingDeck() {
+		System.out.println("TESTING DECK\n\n");
+		
+		Deck deck = new Deck();
+		for(int i = 0; i < deck.size(); i++) {
+			deck.pokerCards.get(i).setVisibility(true);
+		}
+		System.out.println("Default Constructor that adds 52 cards to deck\n");
+		System.out.println("\tExpected: Creates 52 cards in order");
+		System.out.println("\tActual:   " + deck);
+		
+		System.out.println("Shuffle()\n");
+		System.out.println("\tExpected: To shuffle cards in Deck");
+		
+		deck.shuffle();
+		System.out.println("\tActual:   " + deck);
+		
+	}
+	
+	public static void testingColumn() {
+		System.out.println("TESTING COLUMN\n\n");
+
+		PokerCard p1 = new PokerCard(Value.Ace, Suit.Clubs);
+		PokerCard p2 = new PokerCard(Value.Two, Suit.Diamonds);
+		PokerCard p3 = new PokerCard(Value.Two, Suit.Hearts);
+
+		Pile column = new Column();
+		
+		System.out.println("rules()\n");
+		
+		column.add(p2);
+		System.out.println("\tExpected: Card Added Successfully");
+
+		if(column.rules(p1) == true)
+		{
+			column.add(p1);
+			System.out.println("\tActual:   Card Added Successfully");
+		}
+		else
+		{
+			System.out.println("Cant not be added");
+		}
+		
+		System.out.println("\tExpected: Cant not be added");
+
+		if(column.rules(p3) == true)
+		{
+			column.add(p3);
+			System.out.println("\tActual:   Card Added Successfully");
+		}
+		else
+		{
+			System.out.println("\tActual:   Cant not be added");
+		}
+	}
+	
+	public static void testingFoundation() {
+		System.out.println("TESTING FOUNDATION\n\n");
+
+		PokerCard p1 = new PokerCard(Value.Ace, Suit.Clubs);
+		PokerCard p2 = new PokerCard(Value.Two, Suit.Clubs);
+		PokerCard p3 = new PokerCard(Value.Two, Suit.Hearts);
+		PokerCard p4 = new PokerCard(Value.Three, Suit.Clubs);
+		PokerCard p5 = new PokerCard(Value.Four, Suit.Clubs);
+		PokerCard p6 = new PokerCard(Value.Five, Suit.Clubs);
+		PokerCard p7 = new PokerCard(Value.Six, Suit.Clubs);
+		PokerCard p8 = new PokerCard(Value.Seven, Suit.Clubs);
+		PokerCard p9 = new PokerCard(Value.Eight, Suit.Clubs);
+		PokerCard p10 = new PokerCard(Value.Nine, Suit.Clubs);
+		PokerCard p11 = new PokerCard(Value.Ten, Suit.Clubs);
+		PokerCard p12 = new PokerCard(Value.Jack, Suit.Clubs);
+		PokerCard p13 = new PokerCard(Value.Queen, Suit.Clubs);
+		PokerCard p14 = new PokerCard(Value.King, Suit.Clubs);
+		
+		
+
+		
+		Foundation foundation = new Foundation();
+		
+		System.out.println("rules()\n");
+		
+		foundation.add(p1);
+		System.out.println("\tExpected: Card Added Successfully");
+
+		if(foundation.rules(p2) == true)
+		{
+			foundation.add(p2);
+			System.out.println("\tActual:   Card Added Successfully");
+		}
+		else
+		{
+			System.out.println("Cant not be added");
+		}
+		
+		System.out.println("\tExpected: Cant not be added");
+
+		if(foundation.rules(p3) == true)
+		{
+			foundation.add(p3);
+			System.out.println("\tActual:   Card Added Successfully");
+		}
+		else
+		{
+			System.out.println("\tActual:   Cant not be added");
+		}
+		
+		System.out.println("isFull()\n");
+		
+		foundation.add(p4);
+		foundation.add(p5);
+		foundation.add(p6);
+		foundation.add(p7);
+		foundation.add(p8);
+		foundation.add(p9);
+		foundation.add(p10);
+		foundation.add(p11);
+		foundation.add(p12);
+		foundation.add(p13);
+		foundation.add(p14);
+
+		System.out.println("\tExpected: true ( 13 - Size of foundation when full");
+		
+		System.out.println("\tActual:   " + foundation.isFull());
+	}
+	
+	public static void testingPile() {
+		System.out.println("TESTING PILE\n\n");
+
+		PokerCard p1 = new PokerCard(Value.Ace, Suit.Clubs);
+		PokerCard p2 = new PokerCard(Value.Two, Suit.Clubs);
+		PokerCard p3 = new PokerCard(Value.Two, Suit.Hearts);
+		PokerCard p4 = new PokerCard(Value.Three, Suit.Clubs);
+		
+		
+		Foundation p = new Foundation();
+		
+		System.out.println("Add(PokerCard p)\n");
+		p.add(p1);
+		System.out.println("\tExpected:  Bicycle");
+		System.out.println("\tActual:   " + p);
+		
+		System.out.println("removeCard()\n");
+		p.removeCard();
+		System.out.println("\tExpected:  []");
+		System.out.println("\tActual:    " + p);
+		
+		System.out.println("removeAll()\n");
+		p.add(p1);
+		p.add(p2);
+		p.add(p3);
+		p.add(p4);
+
+		p.removeAll();
+		System.out.println("\tExpected:  []");
+		System.out.println("\tActual:    " + p);
+		
+		System.out.println("moveCard(Pile p)\n");
+
+		p.add(p1);
+		p.add(p2);
+		p.add(p3);
+		p.add(p4);
+		Foundation f = new Foundation();
+		
+		p.moveCard(f);
+		f.pokerCards.get(0).setVisibility(true);
+		System.out.println("\tExpected:   Three of Clubs");
+		System.out.println("\tActual:    " + f);
+		
+		System.out.println("size()\n");
+		
+		System.out.println("\tExpected:  3");
+		System.out.println("\tActual:    " + p.size());
+
+		
+	}
+	
+	public static void testingPlayer() {
+		System.out.println("TESTING PLAYER\n\n");
+
+		Player p1 = new Player();
+		
+		System.out.println("Default Constructor & getName()");
+		System.out.println("\tExptected: Mikael");
+		System.out.println("\tActual:    " +  p1.getName());
+		
+		System.out.println("\ngetName()");
+		System.out.println("\tExptected: Bob");
+		p1.setName("Bob");
+		System.out.println("\tActual:    " +  p1.getName());
+
+	}
+}

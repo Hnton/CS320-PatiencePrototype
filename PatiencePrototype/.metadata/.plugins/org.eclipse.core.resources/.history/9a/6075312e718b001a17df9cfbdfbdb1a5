@@ -1,0 +1,22 @@
+
+public class Testing {
+
+	public static void main(String[] args) {
+
+		Deck deck = new Deck();
+		deck.shuffle();
+		Column c1 = new Column();
+		Foundation f1 = new Foundation();
+		consoleOutput output = new consoleOutput();
+		
+		deck.pokerCards.get(0).setVisibility(true);
+		System.out.println(deck.pokerCards.get(0));
+		System.out.println(deck.pokerCards.get(0).value.ordinal());
+		
+		
+		if(f1.rules(deck.pokerCards.get(0)) == true)
+		{
+			deck.moveCard(f1);
+		}
+	}
+}
